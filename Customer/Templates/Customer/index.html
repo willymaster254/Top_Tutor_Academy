@@ -1,0 +1,429 @@
+{% extends 'Customer/base.html' %}
+{% load static %}
+{% block content %}
+{% include 'Customer/navs.html' %}
+<style>
+body{
+  font-size: 17px;
+}
+
+    .d-grid {
+		  display: grid;
+		  grid-template-columns: repeat(2, 1fr);
+		  grid-auto-rows: 100px;
+		  grid-gap: 7px;
+		}
+        .counter-container {
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+/* .move-up{
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+  border: 2px solid #cda45e;
+} */
+.counter {
+text-align: center;
+}
+
+.counter h3 {
+padding: 0.5rem 0;
+font-size: 30px;
+font-weight: 700;
+}
+
+.counter h6 {
+font-size: 25px;
+padding-bottom: 1rem;
+}
+
+.icon {
+height: 5rem;
+width: auto;
+}
+
+
+</style>
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+	<!-- Indicators/dots -->
+	<div class="carousel-indicators">
+	  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+	  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+	  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+	</div>
+	
+	<!-- The slideshow/carousel -->
+	<div class="carousel-inner">
+	  <div class="carousel-item active">
+		<img src="{% static 'images/academic.jpg' %}" alt="#" class="d-block" style="height: 430px; width: 100%;">
+		<div class="carousel-caption">
+		<h2 style="font-family: poppins; color: #ffffff;">A+ Grades</h2>
+		<p style="font-size: 25px;color: #ffffff;">Get Quality Original Work in Time</p>
+		<a href="{% url 'task-create' %}">
+			{% include 'Customer/orderbutton.html' %} </a>
+	  
+		</div>
+	  </div>
+	  <div class="carousel-item">
+		<img src="{% static 'images/Bookshelf.png' %}" alt="" class="d-block" style="height: 430px; width: 100%;">
+		<div class="carousel-caption">
+      <h2 style="font-family: poppins; color: #10177c;">Modern Library</h2>
+			<h2 style="font-family: poppins; color: #ffffff;">We are Well Equiped</h2>
+			<!-- <p style="font-size: 25px;">Meet Deadlines Without Strain </p> -->
+			<a href="{% url 'task-create' %}">
+			{% include 'Customer/orderbutton.html' %} </a>
+		</div> 
+	  </div>
+	  <div class="carousel-item">
+		<img src="{% static 'images/showcase.jpg' %}" alt="" class="d-block" style="height: 430px; width: 100%;">
+		<div class="carousel-caption">
+      <h2 style="font-family: poppins; color: #ffffff;">Qualified Team</h2>
+      <p style="font-size: 25px;color: #ffffff;">To Give Exemplary Services</p>
+      <a href="{% url 'task-create' %}">
+			{% include 'Customer/orderbutton.html' %} </a>
+		</div>  
+	  </div>
+	</div>
+	
+	<!-- Left and right controls/icons -->
+	<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+	  <span class="carousel-control-prev-icon"></span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+	  <span class="carousel-control-next-icon"></span>
+	</button>
+  </div>
+
+<!-- End of Carousel -->
+
+<!-- Happy Customers -->
+
+
+
+<!-- Jumbotron -->
+<div class="container-fluid">
+    <div class="row jumbotron" data-aos="fade-left" data-aos-delay="200">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+        <marquee direction="right">
+       <span style="color: #10177c; font-weight: 400;" >Dear Customer, Welcome to Our Online Learning Centre.</span> 
+        </marquee>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+          
+  
+      </div>
+    </div>
+  </div>
+  
+  
+   <!-- Two Column Section -->
+   <div class="container-fluid padding">
+    <div class="row text-center padding" data-aos="zoom-in" data-aos-delay="200">
+      <div class="col-md-12 col-lg-6">
+        <h2>If You Assign Us...</h2>
+        <p>We offer solutions to all your writing requirements. Our services are exquisite and exemplary, simply unparalleled. You will receive customized original papers of the finest quality every time you entrust us with your assignment. We have lots to offer, so navigate our site to gain familiarity with the perks you gain ranging from writing services, exemplary and original quality, unemployed professors, and guarantees.</p>
+      <br>
+      <a href="{% url 'task-create' %}" class="btn btn-primary">Hire a Tutor</a>
+  
+      </div>
+      <div class="col-lg-6">
+      <div class="zoomin">
+        <img src="{% static 'images/kate.jpg' %}" class="img-fluid">
+      </div>
+      </div>
+    </div>
+  </div>
+  <hr class="my-4">
+  <figure>
+    <div class="fixed-wrap">
+      <div id="fixed">
+  
+      </div>
+    </div>
+  </figure>
+  
+  <!-- Emoji -->
+  <!-- <button type="button" class="btn btn-secondary btn-lg"><a href="/accounts/tregistration"><span style="color: white",>Cheapest Payment Platforms</span></a></button> -->
+  <div id="emoji" class="collapse">
+    <div class="container-fluid padding">
+      <!-- <div class="row text-center"> -->
+        <div class="col-sm-6 col-md-3">
+          <div class="zoomin">
+          <img src="{% static 'images/kate.jpg' %}">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div class="container my-5 p-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="dark-grey-text">
+  
+      <!-- Section heading -->
+      <h2 class="text-center font-weight-bold mb-4 pb-2">Secret to Customers' Loyalty</h2>
+      <!-- Section description -->
+      
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4">
+  
+          <!-- Grid row -->
+          <div class="row mb-3">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fas fa-calendar-alt"style="font-size:48px;color:pink"></i>
+              
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Deadline is Part of the Assignent</h5>
+              <p class="grey-text">We cover all subjects present.Yours is to set deadline at your convinience after which our team will take position to give quality original paper in time.</p>
+             
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+          <!-- Grid row -->
+          <div class="row mb-3">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fas fa-address-card" style="font-size:48px;color:blue"></i>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Detailed Writers Profile</h5>
+              <p class="grey-text">We give honest tutors' details depending on their proficiency. In some occasions, we guide customers in hiring highly skilled personnel.</p>
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+          <!-- Grid row -->
+          <div class="row mb-md-0 mb-3">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fa fa-phone" style="font-size:48px;color:green"></i>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Contact</h5>
+              <p class="grey-text mb-md-0">Our contact team is available 24/7.</p>
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-4 text-center">
+          <div class="zoomin">
+          <img src="{% static 'images/pens.png' %}" alt="#" class="d-block" style="height: 430px; width: 100%;">
+          <a href="{% url 'task-create' %}" class="btn btn-primary">Hire a Tutor</a>
+        </div>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-4">
+  
+          <!-- Grid row -->
+          <div class="row mb-3">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fas fa-edit" style="font-size:48px;color: cyan"></i>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Edits Any Time at Will</h5>
+              <p class="grey-text">We allow supplimenting of orders at zero charges. </p>
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+          <!-- Grid row -->
+          <div class="row mb-3">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fab fa-sistrix"style="font-size: 48; color:purple"></i>
+              </div>
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Plagiarism Report</h5>
+              <p class="grey-text">We double check all assignments similarity indexes before fowarding to our customers. Any paper uploaded to a customer MUST be plagiarism free. </p>
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+          <!-- Grid row -->
+          <div class="row">
+  
+            <!-- Grid column -->
+            <div class="col-2">
+              <i class="fas fa-dollar-sign" style="font-size: 48; color:gold"></i>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-10">
+              <h5 class="font-weight-bold mb-3">Affordable Prices</h5>
+              <p class="grey-text mb-0">Our Prices range from $5 per page, inclusion of discounts adding up to 40%. Discounts, are subject to terms and conditions.</p>
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </section>
+    <!--Section: Content-->
+  
+    <div class="reasons">
+        <section id="Informations">
+          <div class= "container"data-aos="fade-left" data-aos-delay="200">
+            
+            <h4 class="text-center font-weight-bold mb-4 pb-2" style="color: indigo;">Why Virtual Academy?</h4>
+          
+          
+        <h5 style="text-align: justify;"><b style="font-weight: 600;">Essay Writing Service with Vast Experience</b></h5>
+        <p>Virtual Academy has been helping students with their studies since 2012. With over 8 years in the industry, we have perfected in online writing and tutoring.Thousands of students have been helped to reach their full academic potential by connecting them with the best-qualified essay writers across the globe.</p>
+        <p>We offer papers of all academic levels, including high school, college, and university. Our professionals are capable of writing all types of assignments, including but not limited to case studies, research papers, assignments, dissertations, term papers, M/As, and doctorates. No matter the subject, we always deliver high-quality custom writing orders.</p>
+        <p>Every paper that our essay writing service produces is done exactly as the customer requests. Our quality assurance team makes sure each paper is done to our standards, and we guarantee no plagiarism. Our writer managers always monitor our writing team, so you can be sure each paper received will be top-notch.</p>
+        <p>When students decide to hire one of our essay writers, they will no longer need to worry about their deadlines of slipping grades. Our writers are professionals who have many years of experience in the field of writing. We guarantee that the paper you receive will be 100% unique and of the highest quality. Our writers will view your guidelines and keep all your recommendations in mind when writing your paper. To help you even further, send your writer a sample of your writing, and they will even mimic your style.</p>
+        
+        <h5 style="text-align: justify;"><b style="font-weight: 600;">Select Your Personal Online Essay Writer</b></h5>
+        <p>Our goal is to create a user-friendly platform that has a professional catalog of top-notch essay writers. Connecting every customer with a professional writer who meets their needs is a top priority for us. Our intuitively designed platform will make the process of hiring a writer easy and painless. Browse our catalog of hundreds of writers and choose a professional who specializes in the topic of your paper. No matter the topic, we have a professional writer who specializes in it.</p>
+        <p>Each writer has their own profile where you can check their success rate, subject specification, and overall satisfaction rate from customers. Apart from that, each profile also contains a short biography of the writer to give you a deeper understanding of who they are. Also on the profile, there is a review section where you can read comments made from previous clients. All this information about the writer is here to help you make an informed decision before you place an order.</p>
+        <br>
+        <h5 style="text-align: justify;"><b style="font-weight: 600;">Key Benefits of Working With a Professional Essay Writer</b></h5>
+        <p>We started our writing service to help struggling students improve their academics by connecting them with the best online essay writers. Your deadlines will always be met when you hire a writer with us because even if you need your paper written in just 6 hours, our professionals can accomplish that. No matter if your deadline is in 6 hours or 2 weeks, we will have your paper ready. No matter the time or day that your paper is due, you can be sure that our writers will meet your deadline.</p>
+        <p>Users can choose from our large catalog of writers who specialize in various fields. Our professionals have many years of experience writing and even hold higher education degrees like PhDs. We will provide you with a quality paper at an affordable price. Our satisfaction guarantee promises that the paper you order will be up to your standards. We can make this promise because our quality assurance team monitors every writer’s performance.</p>
+        
+        
+        <h5 style="text-align: justify;"><b style="font-weight: 600;">User-Friendly Services</b></h5>
+        <p>Virtual Academy boasts a very convenient, intuitive, and easy-to-use essay service website. We work hard to make sure the experience of every user is positive. Our customer support team is always available and read to respond to your inquiries. Also, our service is 100% legitimate and legal, so you shouldn’t be concerned with ordering from us.</p>
+        <p>We also understand that transparency brings trust, this is evident from the reviews section of our website. Feel free check the reviews that real users wrote about our service. We value our community and strive to make our product better with every update. We’re here to help you make an informed decision, so if you have any questions about our service, please contact our 24⁄7 customer support team.</p>
+        
+        
+        <h5 style="text-align: justify;"><b style="font-weight: 600;">Outstanding Essay Writers & High Quality Essay Service</b></h5>
+        <p>Is your social life being taken over by your student life? Are you struggling to balance work with your academics? If this sounds like you, or you are just busy in general because of school, then you have come to the right place. Using our essay writing service, students will have the rare opportunity to relieve the stress of school and focus on work or other high priority tasks.</p>
+        <p>The answer to all your time and academic problems is Virtual Academy. Don’t be bound by your homework, essays, research papers, or any type of school work ever again.</p>
+        
+       
+        </div>
+          </div>
+          </section>
+        
+          
+<!-- endof why virtual -->
+          
+
+<div class="row align-items-center">
+          
+    <div class="col-lg-6 mb-4">
+      <h5 class="font-weight-normal mb-4">We Build Amazing Moments for Our Customers.</h5>
+      <p>Virtual Academy allows you to factor out on how to create a great graduation event by thinking about dress code, speakers, awards, entertainment and even refreshments</p>
+      <p>Out team members combine efforts to ensure quality standards have been archieved. And best of all, we
+        are super passionate
+        about our work. Our Pride is Our Customers' Sucess</p>
+        <a href="{% url 'task-create' %}" class="btn btn-primary">Hire an Expert</a>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+      <div id="mdb-lightbox-ui"></div>
+
+      <div class="d-grid mdb-lightbox">
+        <figure class="item">
+          <a href="{% static 'images/z.jpg'%}" class="img-fluid" alt="" style="width: 100%;"
+            class="z-depth-1 rounded" data-size="1600x1067">
+            <img  src="{% static 'images/z.jpg'%}" class="img-fluid" alt="" style="width: 100%;">
+          </a>
+        </figure>
+        <figure class="item">
+          <a href="{% static 'images/x.jpg'%}" class="img-fluid" alt="" style="width: 100%;"
+            class="z-depth-1 rounded" data-size="1600x1067">
+            <img  src="{% static 'images/x.jpg'%}" class="img-fluid" alt="" style="width: 100%;">
+          </a>
+        </figure>
+        <figure class="item"data-aos="zoomout" data-aos-delay="200">
+          <a href="{% static 'images/graduates.png'%}" class="img-fluid" alt="" style="width: 100%;"
+            class="z-depth-1 rounded" data-size="1600x1067">
+            <img src="{% static 'images/graduates.png'%}" class="img-fluid" alt="" style="width: 100%;">
+          </a>
+        </figure>
+        <figure class="item">
+          <a href="{% static 'images/b.jpg'%}" class="img-fluid" alt="" style="width: 100%;">
+            
+            <img  src="{% static 'images/b.jpg'%}" class="img-fluid" alt="" style="width: 100%;"class="z-depth-1 rounded" data-size="1600x1067">
+          </a>
+        </figure>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!--Section: Content--> 
+
+
+<div class="container">
+<div class="move-up d-flex" >
+  <span><i class="fas fa-arrow-circle-up fa-2x " style="color: black;" ></i></span>
+</div>
+</div>
+
+{% include 'Customer/footer.html' %}
+
+
+{% endblock content %}

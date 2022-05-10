@@ -1,0 +1,167 @@
+
+{% load static %}
+
+<style>
+  .top{
+    padding-top: 35px;
+    text-transform: none;}
+  .nav-link {
+  font-weight: 490;
+  font-size: large;
+  padding: .2rem 1rem;
+
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <!-- <img src="{% static 'images/book.png' %}" alt="" width="30" height="30"> -->
+    
+    <i class="fa-solid fa-graduation-cap" style="font-size:38px;color: black"></i><a class="navbar-brand" href="/">
+      <div class="top">
+      <h5 style="font-family:Lucida Calligraphy; text-transform: none; "><span style="color:#5383d3;">Virtual</span> Academy</h5></a>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="" href="/"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Assignment Help
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Online Classes</a></li>
+              <li><a class="dropdown-item" href="#">Essay Writing</a></li>
+              <li><a class="dropdown-item" href="#">Technical Calculations</a></li>
+              <li><a class="dropdown-item" href="#">Thesis</a></li>
+              <li><a class="dropdown-item" href="#">Programing</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">More</a></li>
+            </ul>
+          </li> 
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Testmonials</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'task-create' %}">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'tasks' %}">My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Live Chat</a>
+          </li>
+        </ul>
+        {% if user.is_authenticated %}
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
+            <span style="font-family: Lucida Calligraphy; color: #5383d3;">{{request.user|title}}</span>
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="{% url 'tasks' %}">My Orders</a></li>
+            <li><a class="dropdown-item" href="{% url 'account' %}">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'account' %}">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+
+        
+              
+              
+            </div>
+          </li>
+        </ul>
+     
+     <!-- <li><a href="accounts/logout"><h2>Logout</h2></a></li> -->
+     {% else %}
+      <form class="form-inline my-2 my-lg-0">
+        <a href="{% url 'login' %}" class="btn btn-outline-secondary border-radius: 12px;"><span style="font-size: 14px;">Log In</span></a>
+        <a href="{% url 'register' %}" class="btn btn-primary ml-2 border-radius: 12px;"><span style="font-size: 14px;">Sign Up</span></a>
+      </form>
+      {% endif %}
+    </div>
+  </nav> 
+
+  <script>
+    // ---------Responsive-navbar-active-animation-----------
+function test(){
+	var tabsNewAnim = $('#navbarSupportedContent');
+	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+	var itemPosNewAnimTop = activeItemNewAnim.position();
+	var itemPosNewAnimLeft = activeItemNewAnim.position();
+	$(".hori-selector").css({
+		"top":itemPosNewAnimTop.top + "px", 
+		"left":itemPosNewAnimLeft.left + "px",
+		"height": activeWidthNewAnimHeight + "px",
+		"width": activeWidthNewAnimWidth + "px"
+	});
+	$("#navbarSupportedContent").on("click","li",function(e){
+		$('#navbarSupportedContent ul li').removeClass("active");
+		$(this).addClass('active');
+		var activeWidthNewAnimHeight = $(this).innerHeight();
+		var activeWidthNewAnimWidth = $(this).innerWidth();
+		var itemPosNewAnimTop = $(this).position();
+		var itemPosNewAnimLeft = $(this).position();
+		$(".hori-selector").css({
+			"top":itemPosNewAnimTop.top + "px", 
+			"left":itemPosNewAnimLeft.left + "px",
+			"height": activeWidthNewAnimHeight + "px",
+			"width": activeWidthNewAnimWidth + "px"
+		});
+	});
+}
+$(document).ready(function(){
+	setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+	setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
+
+
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+	// Get current path and find target link
+	var path = window.location.pathname.split("/").pop();
+
+	// Account for home page with empty path
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+	// Add active class to target link
+	target.parent().addClass('active');
+});
+
+  </script>

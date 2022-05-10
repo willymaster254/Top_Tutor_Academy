@@ -1,0 +1,155 @@
+{% extends "Customer/base.html" %}
+{% load static %}
+
+
+	
+  
+ {% block content%} 
+ {%  include "Customer/nav.html" %}
+ <header>
+   <style>
+.why{
+	column-count: 2;
+	column-gap: 30px;
+  }
+
+    .btn.btn-success{
+    border: none;
+    border-radius: 1rem;
+    padding: .1rem 3rem;
+    /* font-style: italic; */
+    width: 20%;
+    text-justify: auto;
+    font-size: .2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+    
+    
+ 
+    </style>
+ </header>
+ 
+  <!--  ======================= Start Banner Area =======================  -->
+  <section class="site-banner">
+    <div class="container">
+        <div class="row"data-aos="fade-left" data-aos-delay="200">
+            <div class="col-lg-6 col-md-12 site-title">
+                <h3 class="title-text"data-aos="fade-left" data-aos-delay="200">Hey...</h3>
+                <h1>Welcome To Virtual Academy</h1>
+                <h4>Academic Zone Number 1</h4>
+                <div class="site-buttons">
+                    <div class="d-flex flex-row flex-wrap"data-aos="fade-left" data-aos-delay="200">
+                        <button type="button" class="btn btn-primary btn-lg"><a href="{% url 'task-create' %}"><span style="color: white",>Write My Paper</span></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 banner-image"data-aos="zoom-in" data-aos-delay="200">
+            <div class="zoomin">
+              <img src="{% static 'images/hat.jpg' %}"  alt="banner-img" class="img-fluid">
+            </div>
+            </div>
+        </div>
+    
+          
+    <!--  ========================= About Area ==========================  -->
+
+    <section class="about-area">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6 col-md-12">
+                  <div class="about-image">
+                <div class="zoomout">
+                    <img src="{% static 'images/browse.png' %}"  alt="banner-img" class="img-fluid">
+                </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-12 about-title">
+                  <h2 >
+                      About Us
+                  </h2>
+                  <div class="paragraph py-4 w-75">
+                      <p class="para"data-aos="fade-left" data-aos-delay="200">
+                        Hello, welcome to the Virtual Academy a Zone of prosperity. While here, Be assured to interact with a professional team who will be taking care of your academic issues. 
+                        Our pride is based on holding a good number of writing experience in the academic field.</p>
+                     
+                      <p class="para"data-aos="fade-right" data-aos-delay="200">
+                  
+                          Allow us confess that our essay writing professionalism is based on belief in a good customer relation through proper communication,
+                          following every single customer's instructions on the assigned orders, practicing due diligence, giving a fresh perspective to every paper that we work on, and not forgetting that customer satisfaction must be given first priority.</p> 
+                          
+                          <a href="{% url 'task-create' %}" class="btn btn-primary">Order Now!</a>
+                      </p>
+                  </div>
+               
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!--  ========================= End About Area ==========================  -->
+
+
+    <!-- Two Column Section -->
+    <div class="why">
+    <aside class="sidebar">
+        <div class="category">
+            <h6>Services Offered</h6>
+            <ul class="category-list">
+                <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                    <button type="button" class="btn btn-success" style="width: 85%; height: 60px;"><a href="{url 'task-create' %}"><h style="text-align: left;"></a>Thesis Writing</h></span></button>
+                    <!-- <span>(01)</span> -->
+                    <br>
+                    <br>
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="700">
+                    
+                        <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",><h6></a>Online Classes</h6></span></button>
+                </li>
+                <br>
+                    <br>
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",><h6></a>Computer Programming</h6></span></button>
+                        <!-- <span>(02)</span> -->
+                    </li>
+                    <br>
+                </li>
+                <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",><h6></a>Essays</h6></span></button>
+                    <!-- <span>(02)</span> -->
+                </li>
+                <br>
+                <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",></a><h6>Statistical Analysis </h6></span></button>
+                    <!-- <span>(03)</span> -->
+                </li>
+                <br>
+                <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><span style="color: aliceblue;",><h6></a>Web Designing</h6></span></button>
+                    <!-- <span>(04)</span> -->
+                </li>
+                <br>
+                <li class="list-items" data-aos="fade-left" data-aos-delay="600">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",><h6 style="text-decoration: none;"></a>Technical calculations </h6></span></button>
+                    <!-- <span>(5)</span> -->
+
+                </li>
+                <br>
+                <li class="list-items" style="text-decoration: none;" data-aos="fade-left" data-aos-delay="800">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><span style="color: aliceblue;",></a><h6>Database Management </h6></span></button>
+                    <!-- <span>(5)</span> -->
+                
+                </li>
+                <br>
+                <li class="list-items" data-aos="fade-left" data-aos-delay="900">
+                    <button type="button" class="btn btn-success"  style="width: 85%; height: 60px;"><a href="#"><span style="color: aliceblue;",></a><h6>Software Engineering </h6></span></button>
+                    <!-- <span>(5)</span> -->
+
+                </li>
+            </ul>
+        </aside>
+        </div>
+    </div>
+        
+        
+    {% include 'Customer/footer.html' %}
+{% endblock %}

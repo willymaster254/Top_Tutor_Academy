@@ -1,0 +1,115 @@
+{%  extends 'Customer/main.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Customer/nav.html' %}
+{% load crispy_forms_tags %}
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to HomePage</a>
+			<hr>
+			<h3 style="text-align: center">Account Settings</h3>
+			<hr>
+			<h3 style="text-align: center">Profile Picture</h3>
+			
+			<img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="width: 150px; height: 150px; margin-left: 20%;">
+			{% include 'Customer/logoutbutton.html' %}
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card card-body">
+			<h3 style="text-align: center">Personal Information</h3>
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form|crispy}}
+		
+			
+			
+			<div class="row">
+				<div class="col-md-6">
+					<input class="btn btn-primary" type="submit" name="Update Information">
+				</div>
+				<div class="col-md-4">
+					<a href="{% url 'tasks' %}" class="btn btn-secondary btn-block btn-lg" style="width: 200px;">
+						<i class="fas fa-stream"></i> My Orders
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+</form>
+
+	<div class="col-md-4">
+		<div class="card card-body">
+			<h3 style="text-align: center">Ratings</h3>	
+			<div class="container">
+				<div class="row">
+				  
+					{% include 'Customer/progress_circle.html' %}
+					<span style="text-align: center;">5.0 Star 100% Success Rate</span> 
+					{% include 'Customer/5star.html' %}
+				  </div>
+				  
+					
+				  </div>
+				</div>
+				</div>
+	
+		
+				</div>		
+			</div>
+			
+		
+	</div>
+</div>
+
+
+
+<script>
+jQuery(document).ready(function($){
+	
+	var path = window.location.pathname.split("/").pop();
+
+	
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+
+	target.parent().addClass('active');
+});
+
+
+$(window).on('load',function () {
+    var current = location.pathname;
+    console.log(current);
+    $('#navbarSupportedContent ul li a').each(function(){
+        var $this = $(this);
+       
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.parent().addClass('active');
+            $this.parents('.menu-submenu').addClass('show-dropdown');
+            $this.parents('.menu-submenu').parent().addClass('active');
+        }else{
+            $this.parent().removeClass('active');
+        }
+    })
+});
+  </script>
+  
+  
+
+
+{% endblock %}

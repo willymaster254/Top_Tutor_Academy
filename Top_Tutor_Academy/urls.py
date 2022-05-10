@@ -18,10 +18,37 @@ from django.urls import path
 from Customer import views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from Customer.views import OrderingList
+from Customer.views import TaskList
+from Customer.views import TaskDetail
+from Customer.views import TaskCreate
+from Customer.views import TaskUpdate, TaskDelete,CustomLoginView,LogoutView, RegisterPage
+from Customer import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('terms/', views.terms, name='terms'),
+    path('ordering/', views.Ordering, name='ordering'),
+    path('order/', OrderingList.as_view(), name='Order'),
+    path('tasks/', TaskList.as_view(), name='tasks'),
+    path('task/<int:pk>/', TaskDetail.as_view(), name='task'),
+    path('task-create/', TaskCreate.as_view(), name='task-create'),
+    path('task-update/<int:pk>/', TaskUpdate.as_view(), name='task-update'),
+    path('task-delete/<int:pk>/', TaskDelete.as_view(), name='task-delete'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(next_page= '/'), name='logout'),
+    path('register/', RegisterPage.as_view(), name='register'),
+    path('profile/', user_views.profile, name='profile'),
+    path('account/', views.accountSettings, name="account"),
+    path('tasklist/', views.tasklist, name='tasklist'),
+    path('taskupload/', views.taskupload, name='taskupload'),
+    path('contact/', views.contact, name='contact'),
+    path('success/', views.success, name='success'),
+
+
+
 ]
 
 if settings.DEBUG: # new
